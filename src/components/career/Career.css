@@ -1,0 +1,29 @@
+
+
+/* Media query for responsiveness (example) */
+
+
+.container {
+  margin: 32px;
+}
+
+.culture-section {
+
+  margin-top: 42px;
+}
+
+.culture-section h2 {
+color: #263138;
+font-weight: 500;
+}
+
+.culture-section p {
+  font-family: Poppins;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 0%;
+   color: #555;
+}
+
+

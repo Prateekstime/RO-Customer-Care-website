@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities{
+    /* For WebKit browsers (Chrome, Safari) */
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* For Internet Explorer, Edge */
+.hide-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+}
+
+/* For Firefox */
+.hide-scrollbar {
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* General */
+.hide-scrollbar {
+    overflow: scroll;  
+}
+
+
+.custom-dotted {
+    border-top: 2px dotted #c7c7c5;
+    border-spacing: 3px; 
+}
+.custom-dotted2 {
+    border-top: 2px dotted #c7c7c5;
+    border-spacing: 5px; 
+}
+
+}

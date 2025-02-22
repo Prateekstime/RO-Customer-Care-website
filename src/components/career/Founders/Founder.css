@@ -1,0 +1,60 @@
+.founders-container {
+}
+
+.founders-container h2 {
+  margin-bottom: 20px; /* Space below heading */
+}
+
+.founders-grid {
+  display: flex;
+  flex-direction: column; /* Align heading and grid vertically */
+  align-items: center; /* Center horizontally */
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+  gap: 20px; /* Spacing between grid items */
+}
+
+.founder-card {
+  padding: 15px; /* Example padding */
+}
+
+.founder-image {
+width: -webkit-fill-available;
+    height: 350px;
+  gap: 16px;
+
+  object-fit: cover; /* Maintain aspect ratio and cover container */
+  margin-bottom: 10px; /* Space below image */
+}
+
+.founder-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.founder-title {
+  font-size: 0.9rem; /* Example font size */
+  color: #777; /* Example color */
+  margin-top: 12px;
+}
+
+@media (max-width: 768px) {
+  .founders-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+  }
+}
+
+.founder-image {
+width: -webkit-fill-available;
+    height: 300px;
+
+}
+
+
+
+@media (max-width: 400px) {
+  .founders-grid {
+    grid-template-columns: repeat(1, 1fr); /* 2 columns on smaller screens */
+  }
+}

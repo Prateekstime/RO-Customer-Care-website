@@ -1,0 +1,40 @@
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px;
+  border: 2px solid #96afbf;
+}
+
+.hero-text {
+  width: 50%;
+}
+
+.hero-text h1 {
+  font-size: 2.5em;
+  font-weight: bold;
+  margin-bottom: 15px;
+  line-height: 1.2;
+  color: #4caf8e;
+}
+
+.hero-text p {
+  font-size: 1.2em;
+  color: #444;
+  font-style: Poppins;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-wrap: wrap;
+  }
+  .hero-text {
+  width:100%;
+}
+}
