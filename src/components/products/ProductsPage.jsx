@@ -1,7 +1,7 @@
 
 import { NavLink } from "react-router-dom";
 import { FaRupeeSign } from "react-icons/fa";
-import downArrow from "../../assets/downArrow.png";
+
 import Quality from "../../assets/Quality.png";
 import Customer from "../../assets/Customer.png";
 import Gift from "../../assets/GiftBox.png"
@@ -47,22 +47,22 @@ const ProductsPage = () => {
         { img: Offer2, title: "Kent Automated Water Softener, 3000 LPH" },
     ];
     return (
-      <div className="flex flex-col gap-5 mx-4 my-6">
+      <div className="flex flex-col gap-5  my-2">
         {/*Title */}
         <div className="flex items-center">
           <div className="flex-grow border-t border-gray-900"></div>
           <span
             className="mx-2
-                text-3xl font-semibold "
+                text-3xl font-semibold"
           >
             Products
           </span>
           <div className="flex-grow border-t border-gray-900"></div>
         </div>
         {/*Middle */}
-        <div className="flex gap-x-40 mx-20">
+        <div className="flex gap-x-10 mx-20">
           {/* Sidebar */}
-          <div className=" flex flex-col w-1.5/5 p-6 gap-10">
+          <div className=" flex flex-col w-3/12 p-6 gap-6">
             {/*Product Brands */}
             <div>
               <h3 className="text-lg font-semibold ">Product Brands </h3>
@@ -258,7 +258,7 @@ const ProductsPage = () => {
           </div>
 
           {/*Products Available */}
-          <div className="w-full p-2 border border-gray-500">
+          <div className="w-full p-2 border border-gray-300 rounded-md shadow-md">
             <h1 className="text-2xl ">Spare Parts </h1>
             {/* Gray Dashed Line */}
             <div className="my-2 border-t border border-gray-200"></div>

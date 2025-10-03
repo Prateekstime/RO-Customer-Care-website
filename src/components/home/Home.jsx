@@ -4,15 +4,8 @@ import Servicing from "../../assets/Servicing.png";
 import Uninstallation from "../../assets/Uninstallation.png";
 import WaterQuality from "../../assets/WaterQualityTesting.png";
 import SystemCheckup from "../../assets/SystemCheckup.png";
-import Video from "../../assets/Video.png";
-import Video1 from "../../assets/Video1.png";
-import Video2 from "../../assets/Video2.png";
-import Video3 from "../../assets/Video3.png";
-import Video4 from "../../assets/Video4.png";
 import Profile from "../../assets/Profile.png";
 import Gift from "../../assets/GiftBox.png";
-import GoRightButton from "../ui/GoRightButton.jsx";
-import GoLeft from "../ui/GoLeft";
 import Banner from "../home/Banner";
 import ProductCard from "../home/ProductCard";
 import ServiceCard from "./ServiceCard.jsx";
@@ -21,20 +14,30 @@ import QuickLinkCard from "./QuickLinkCard.jsx";
 import CustomerReviewCard from "./CustomerReviewCard.jsx";
 import BrandCarousel from "./BrandCorousel.jsx";
 import EngineerCard from "./EngineerCard.jsx";
+import ServiceSection from "./ServiceSection.jsx";
+import ProductsSection from "./ProductsSection.jsx";
 
 const Home = () => {
   return (
     <div className="w-full flex flex-col gap-10 items-center justify-center ">
    
       <Banner />
-      <div className="relative w-full max-w-[1440px] flex justify-between items-center ">
+       <div className=" w-full max-w-[1440px]  bg-cyan-50 rounded-2xl p-3 flex justify-between items-center ">
+        <ServiceSection />
+      </div>
+      <div className=" w-full max-w-[1440px]  rounded-2xl p-3 flex justify-between items-center ">
+        <ProductsSection />
+      </div>
+      <div className=" w-full max-w-[1440px] flex justify-between items-center ">
         <ProductCard />
       </div>
 
       <div className="w-full max-w-[1420px] h-auto px-4">
-        <h2 className="text-3xl font-semibold text-left p-5 text-blue-900">
+        <h2 className="text-3xl font-semibold text-center p-5 text-blue-900">
           What are you looking for?
         </h2>
+         <div className="w-[360px] mx-auto  h-1 rounded-lg bg-gradient-to-r  mb-8 from-blue-700 via-blue-400 to-blue-700"></div>
+
 
         <div className="grid grid-cols-6 gap-4 mb-10 bg-gradient-to-br from-blue-50 to-cyan-50 border border-blue-200 h-auto px-[40px] py-[20px] rounded-lg shadow-md">
   {/* Card 1 */}
@@ -129,15 +132,17 @@ const Home = () => {
       <div className="relative w-full max-w-[1420px] ">
         {/* Left Arrow Button */}
        
-        <h2 className="text-3xl font-semibold text-left p-5 text-blue-900">
-          Services by product category
+        <h2 className="text-3xl font-semibold text-center p-5 text-blue-900">
+          Services by Product Category
         </h2>
+         <div className="w-[360px] mx-auto  h-1 rounded-lg bg-gradient-to-r  mb-8 from-blue-700 via-blue-400 to-blue-700"></div>
+
        <div className=" w-full max-w-[1440px] ">
         <CategoryCard />
        </div>
       </div>
 
-      <div>
+      <div className="w-full max-w-[1440px] ">
         <EngineerCard />
       </div>
       <div className="w-full max-w-[1440px] ">
@@ -149,9 +154,11 @@ const Home = () => {
       
       <div className="relative w-full max-w-[1420px] justify-between items-center ">
     
-        <h2 className="text-3xl font-semibold text-left p-5 text-blue-900">
+        <h2 className="text-3xl font-semibold text-center p-5 text-blue-900">
           Our Most Booked Services
         </h2>
+         <div className="w-[300px] mx-auto  h-1 rounded-lg bg-gradient-to-r  mb-8 from-blue-700 via-blue-400 to-blue-700"></div>
+
 
         {/* Container for Cards */}
        <ServiceCard />
