@@ -91,10 +91,17 @@ const Footer = () => {
             <h3 className="font-bold text-xl mb-2">Contact Us</h3>
             <ul className="space-y-1 text-sm">
               <li>📍 Unit No. 831, 8th Floor, JMD Megapolis, Gurgaon, Haryana 122018</li>
+
+              <li>📞 ‪+91-9268887770‬</li>
+              <li>📞 ‪+91-9311587744‬</li>
+              <li>🌐 rocareindia.com</li>
+              <li>✉ info@rocareindia.com</li>
+
               <li>📞 +91-9268887770</li>
               <li>📞 +91-9311587744</li>
               <li>🌐 rocareindia.com</li>
               <li>✉️ info@rocareindia.com</li>
+
             </ul>
              {/* Social Links */}
           <div className="mt-4 ">
@@ -148,4 +155,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default Footer;
