@@ -1,0 +1,184 @@
+import React, { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import featureImage1 from "../../assets/product_1676_2_thumb.jpg"
+import featureImage2 from "../../assets/product_427_1_thumb.webp";
+import featureImage3 from "../../assets/product_445_1_thumb.webp";
+import featureImage4 from "../../assets/product_1702_1_thumb.webp";
+import featureImage5 from "../../assets/product_963_1_thumb.webp";
+import featureImage6 from "../../assets/product_311_1_thumb.webp";
+import featureImage7 from "../../assets/product_689_1_thumb.webp";
+import featureImage8 from "../../assets/product_659_1_thumb.webp";
+import featureImage9 from "../../assets/product_488_1_thumb.webp";
+import featureImage10 from "../../assets/product_1695_1_thumb.webp";
+import featureImage11 from "../../assets/product_1696_1_thumb.webp";
+import featureImage12 from "../../assets/product_1698_1_thumb.webp";
+import featureImage13 from "../../assets/product_1731_1_thumb.webp";
+import featureImage14 from "../../assets/product_1732_1_thumb.webp";
+import featureImage15 from "../../assets/product_997_1_thumb.webp";
+import featureImage16 from "../../assets/product_415_1_thumb.webp";
+import featureImage17 from "../../assets/product_428_1_thumb.webp";
+import featureImage18 from "../../assets/product_429_1_thumb.webp";
+import featureImage19 from "../../assets/product_935_1_thumb.webp";
+import featureImage20 from "../../assets/product_442_1_thumb.webp";
+import featureImage21 from "../../assets/product_444_1_thumb.webp";
+import featureImage22 from "../../assets/product_1676_2_thumb.jpg";
+import featureImage23 from "../../assets/product_446_1_thumb.webp";
+import featureImage24 from "../../assets/product_445_1_thumb.webp";
+
+import "swiper/css";
+import "swiper/css/navigation";
+
+const categories = [
+  "Featured Products",
+  "Water Purifier",
+  "RO Plant",
+  "Water Softner",
+  "Water Ionizer",
+  "Spare Parts",
+];
+
+// Products grouped by category
+const productsByCategory = {
+  "Featured Products": [
+    { id: 1, name: "Doctor Fresh Life Veda RO+UV+UF+TDS Infuser+ME+AS+Alkaline", brand: "RO Care India", price: "₹18,500.00", image: featureImage1 },
+    { id: 2, name: "Revolution Semi-Commercial Water Ionizer", brand: "Chanson India", price: "₹2,60,000.00", image: featureImage2  },
+    { id: 3, name: "Knitters RO Membrane G3000", brand: "Shri Krishna Enterprises", price: "₹2,200.00", image: featureImage3 },
+    { id: 4, name: "Doctor Fresh 250 LPH RO Plant - Platinum", brand: "RO Care India", price: "₹1,50,000.00", image: featureImage4 },
+    { id: 5, name: "Usha Celcius Floor Standing Water Dispenser", brand: "3D Logic", price: "₹14,000.00", image: featureImage5 },
+  ],
+  "Water Purifier": [
+    { id: 6, name: "PurePro Water Purifier X100", brand: "PurePro", price: "₹12,500.00", image: featureImage1 },
+    { id: 7, name: "AquaSafe Home RO", brand: "AquaSafe", price: "₹15,000.00", image: featureImage6 },
+    { id: 8, name: "Kent Grand Plus", brand: "Kent", price: "₹18,000.00", image: featureImage7 },
+    { id: 9, name: "BlueStar RO Smart", brand: "BlueStar", price: "₹14,500.00", image: featureImage8 },
+    { id: 10, name: "Livpure Glo RO+UV", brand: "Livpure", price: "₹16,000.00", image: featureImage9 },
+  ],
+  "RO Plant": [
+    { id: 11, name: "RO Plant 500 LPH", brand: "RO Care India", price: "₹1,80,000.00", image: featureImage10 },
+    { id: 12, name: "RO Plant 1000 LPH", brand: "RO Care India", price: "₹3,50,000.00", image:featureImage10 },
+    { id: 13, name: "RO Plant 2000 LPH", brand: "Shree Water Solutions", price: "₹6,50,000.00", image: featureImage11 },
+    { id: 14, name: "RO Plant Industrial", brand: "Chanson India", price: "₹7,20,000.00", image: featureImage12 },
+    { id: 15, name: "Compact RO Plant 300 LPH", brand: "RO Care India", price: "₹90,000.00", image:featureImage12 },
+  ],
+  "Water Softner": [
+    { id: 16, name: "SoftPro 50L", brand: "SoftPro", price: "₹45,000.00", image: featureImage13 },
+    { id: 17, name: "SoftPro 100L", brand: "SoftPro", price: "₹80,000.00", image: featureImage14},
+    { id: 18, name: "BlueSoft Home", brand: "BlueStar", price: "₹60,000.00", image: featureImage15 },
+    { id: 19, name: "PureSoft X200", brand: "PurePro", price: "₹55,000.00", image:featureImage15 },
+    { id: 20, name: "Kent Soft Plus", brand: "Kent", price: "₹50,000.00", image: featureImage14 },
+  ],
+  "Water Ionizer": [
+    { id: 21, name: "Ionizer X500", brand: "Chanson India", price: "₹2,60,000.00", image: featureImage1 },
+    { id: 22, name: "Ionizer Home Plus", brand: "Kent", price: "₹1,80,000.00", image: featureImage16 },
+    { id: 23, name: "Water Ionizer Pro", brand: "RO Care India", price: "₹2,20,000.00", image: featureImage17 },
+    { id: 24, name: "Ionizer Max", brand: "AquaSafe", price: "₹2,50,000.00", image: featureImage18},
+    { id: 25, name: "Chanson Ionizer X200", brand: "Chanson India", price: "₹1,95,000.00", image:featureImage19},
+  ],
+  "Spare Parts": [
+    { id: 26, name: "RO Membrane G3000", brand: "Shri Krishna", price: "₹2,200.00", image: featureImage20 },
+    { id: 27, name: "RO Pump", brand: "RO Care India", price: "₹5,000.00", imag:  featureImage21},
+    { id: 28, name: "Filter Cartridge", brand: "Kent", price: "₹1,500.00", image: featureImage22 },
+    { id: 29, name: "TDS Controller", brand: "Chanson India", price: "₹3,500.00", image: featureImage23 },
+    { id: 30, name: "UV Lamp", brand: "AquaSafe", price: "₹2,800.00", image: featureImage24 },
+  ],
+};
+
+const features = [
+  { text: "Free Shipping", icon: "🚚" },
+  { text: "Money Back Guarantee", icon: "💰" },
+  { text: "Free Installation", icon: "🛠️" },
+  { text: "Easy EMI Option", icon: "💳" },
+  { text: "Service Within 24 Hour", icon: "⏰" },
+  { text: "Online Order Tracking", icon: "📦" },
+];
+
+const ProductsSection = () => {
+  const [activeCategory, setActiveCategory] = useState("Featured Products");
+
+  const products = productsByCategory[activeCategory]; // dynamically get products for selected category
+
+  return (
+    <div className="w-full max-w-[1440px] mx-auto px-6 py-12">
+      <h2 className="text-3xl font-semibold text-center text-blue-900 mb-2">
+        Our Products
+      </h2>
+       <div className="w-[180px] mx-auto  h-1 rounded-lg bg-gradient-to-r  mb-2 from-blue-700 via-blue-400 to-blue-700"></div>
+
+      <p className="text-blue-500 text-center mb-6">
+        Choose the product according your preference.
+      </p>
+      
+
+      {/* Categories */}
+      <div className="flex flex-wrap justify-center gap-10 mb-8">
+        {categories.map((cat) => (
+          <button
+            key={cat}
+            onClick={() => setActiveCategory(cat)}
+            className={`px-4 py-2 rounded-full text-sm font-medium transition ${
+              activeCategory === cat
+                ? "bg-blue-600 text-white"
+                : "bg-blue-100 text-blue-700 hover:bg-blue-200"
+            }`}
+          >
+            {cat}
+          </button>
+        ))}
+      </div>
+
+      {/* Product Slider */}
+      <Swiper
+        modules={[Navigation]}
+        navigation
+        spaceBetween={20}
+        breakpoints={{
+          180: { slidesPerView: 1 },
+          480: { slidesPerView: 2 },
+          768: { slidesPerView: 3 },
+          1024: { slidesPerView: 4 },
+          1280: { slidesPerView: 5 },
+        }}
+      >
+        {products.map((product) => (
+          <SwiperSlide key={product.id}>
+            <div className="bg-white border rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition flex flex-col">
+              <div className="flex justify-center items-center h-56 p-4">
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="h-full object-contain"
+                />
+              </div>
+              <div className="p-4 flex flex-col gap-2">
+                <p className="text-gray-800 font-medium">{product.name}</p>
+                <p className="text-gray-500 text-sm">{product.brand}</p>
+                <p className="font-semibold text-lg text-blue-900">{product.price}</p>
+                <div>
+                <button className="text-2xl w-10 h-10 flex items-center justify-center bg-blue-200 text-white rounded-full hover:bg-blue-500 transition">
+                  👁️
+                </button>
+                </div>
+              </div>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+
+      {/* Features */}
+      <div className="flex flex-wrap justify-center gap-10 mt-12">
+        {features.map((f, i) => (
+          <div
+            key={i}
+            className="flex flex-col items-center text-center max-w-[140px]"
+          >
+            <div className="text-3xl mb-2">{f.icon}</div>
+            <p className="text-gray-700 font-medium">{f.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default ProductsSection;

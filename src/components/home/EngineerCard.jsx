@@ -22,9 +22,11 @@ const EngineerCard = () => {
 
   return (
     <div className="relative w-full max-w-[1440px] px-8 mx-auto py-12">
-      <h2 className="text-3xl font-semibold text-left mb-10 text-blue-900">
+      <h2 className="text-3xl font-semibold text-center mb-2 text-blue-900">
         What Our Engineers Say
       </h2>
+       <div className="w-[340px] mx-auto  h-1 rounded-lg bg-gradient-to-r  mb-8 from-blue-700 via-blue-400 to-blue-700"></div>
+
 
       <Swiper
         modules={[ Autoplay]}
